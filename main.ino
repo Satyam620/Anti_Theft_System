@@ -1,25 +1,22 @@
 #include <ESP8266WiFi.h>
-#include <UniversalTelegramBot.h>
 #include <WiFiClientSecure.h>
-#include <ArduinoJson.h>
+#include <UniversalTelegramBot.h>
+#include <Callmebot_ESP8266.h>
 
-const char* ssid = "xxxxxxxxxx";  // Replace with your WiFi name
-const char* password = "xxxxxxxxxx";          // Replace with your WiFi password
-
-#define botToken "xxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  // Replace with your Telegram bot token
-#define chatID "xxxxxxxxxx"                                        // Replace with your chat ID
+const String username = "@xxxxxxx";
+const char* ssid = "xxxxxxxxxxx";  // Enter your WiFi name
+const char* password = "xxxxxxxxx";          // Enter your WiFi password
 
 X509List cert(TELEGRAM_CERTIFICATE_ROOT);
 
 WiFiClientSecure client;
-UniversalTelegramBot bot(botToken, client);
 
 const int pirPin = D5;       // PIR sensor output pin D5
 const int redLedPin = D1;    // Red LED pin
 const int buzzerPin = D2;    // Buzzer pin
 const int greenLedPin = D3;  // Green LED pin
 
-const int timeSeconds = 5; //Replace with your personal time prefernce.
+const int timeSeconds = 10;
 bool motionDetected = false;
 unsigned long now = millis();
 unsigned long lastTrigger = 0;
@@ -44,8 +41,7 @@ void setup() {
     Serial.print(".");
   }
   Serial.println("Connected to WiFi");
-  bot.sendMessage(chatID, "Bot started up", "");
-  checkSensor();  // Initial sensor check
+  Callmebot.telegramMessage(username, "Bot started");
 }
 
 IRAM_ATTR void detectsMovement() {
@@ -64,13 +60,14 @@ void checkSensor() {
     digitalWrite(greenLedPin, LOW);  // Turn off green LED
     if (WiFi.status() == WL_CONNECTED) {
       String message = "WARNING! Please check your security system";
-      bot.sendMessage(chatID, message, "");
+      Callmebot.telegramCall(username,message,"en-US-Neural2-J",2,"yes",60000);
     }
   } else {
     digitalWrite(redLedPin, LOW);     // Turn off red LED
     digitalWrite(buzzerPin, LOW);     // Turn off buzzer
     digitalWrite(greenLedPin, HIGH);  // Turn on green LED
   }
+  delay(5000);
 }
 
 void loop() {
