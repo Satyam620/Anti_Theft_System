@@ -1,7 +1,7 @@
 # Motion-Detection-Alarm
 This is an IOT based motion detection alarm which have multiple use cases in different scenarios. It generates a remote alert if it is connected to internet via Telegram and It alerts the nearby people with the help of siren.
 
-**Steps prior to coding part:**
+## Steps prior to coding part:
 
 Please connect all the wired according to the following Circuit Diagram and then proceed with the coding part:  
  
@@ -23,7 +23,7 @@ Please connect all the wired according to the following Circuit Diagram and then
 ![Untitled design](https://github.com/user-attachments/assets/e43a944d-3dc6-4bf0-8a6b-f17e132e8c88)
 **Figure 6: Message alert, Incoming Call, Motion detection call log**
 
-**Steps Required to run the Project:**
+## Steps Required to run the Project:
 
 **STEP 1 : DOWNLOAD ARDUINO IDE**   
 	Download and install the Arduino IDE from the official website.
