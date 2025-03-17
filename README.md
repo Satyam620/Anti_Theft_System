@@ -6,10 +6,10 @@ This is an IOT based motion detection alarm which have multiple use cases in dif
 Please connect all the wired according to the following Circuit Diagram and then proceed with the coding part:  
  
  ![unnamed](https://github.com/user-attachments/assets/9a1624a7-0a07-44eb-bafb-ff09ca2f4eb7)
-**Figure 1: Circuit Diagram for Motion Detection Alarm. **
+**Figure 1: Circuit Diagram for Motion Detection Alarm.**
 
 ![unnamed (1)](https://github.com/user-attachments/assets/a8e67056-1fa6-4218-8c19-9e2641c1aad1)
-**Figure 2: Architecture of motion detecion alarm **  
+**Figure 2: Architecture of motion detecion alarm**  
 
 ![unnamed](https://github.com/user-attachments/assets/a3c69387-4cf2-4fc0-811a-d0c2f605b57e)
 **Figure 3: System Off**
